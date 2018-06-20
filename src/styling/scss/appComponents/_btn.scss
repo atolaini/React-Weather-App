@@ -1,0 +1,20 @@
+.btn {
+  width: 20rem;
+  height: 5rem;
+  border: 2px solid #1066ef;
+  background-color: transparent;
+  margin: 2rem;
+  color: #1066ef;
+
+  &:hover {
+    background-color: #1066ef;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.btnContainer {
+  @media (max-width: 51.9rem) {
+    text-align: center;
+  }
+}

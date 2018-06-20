@@ -1,0 +1,37 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  //background-color: #eeee;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/img/sunny.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 96rem;
+  margin: 3rem auto;
+  //border: 1px solid black;
+  padding: 2rem;
+  background-color: transparentize($color: white, $amount: 0.5);
+  box-shadow: 3px 3px 9px transparentize($color: black, $amount: 0.9);
+}
+
+ul {
+  list-style: none;
+}
