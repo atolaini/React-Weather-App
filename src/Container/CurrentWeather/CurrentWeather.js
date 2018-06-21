@@ -15,11 +15,14 @@ class CurrentWeather extends Component {
 
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${APIkey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${APIkey}`
       )
       .then(res => {
         this.setState({ todaysWeather: [res.data] });
         console.log(this.state);
+      })
+      .catch(err => {
+        alert("Unknow city or country code");
       });
 
     e.preventDefault();

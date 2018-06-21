@@ -15,7 +15,7 @@ class CurrentWeather extends Component {
 
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&mode=json&appid=${APIkey}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city},${country}&units=metric&mode=json&appid=${APIkey}`
       )
       .then(res => {
         let newData = [];
@@ -23,7 +23,9 @@ class CurrentWeather extends Component {
           newData.push(res.data.list[i]);
         }
         this.setState({ fiveDayWeather: newData });
-        console.log(this.state);
+      })
+      .catch(err => {
+        alert("Unknow city or country code");
       });
 
     e.preventDefault();
@@ -34,7 +36,7 @@ class CurrentWeather extends Component {
       return (
         <WeatherWidget
           day={el.dt_txt.slice(0, 10)}
-          img={`http://openweathermap.org/img/w/${el.weather[0].icon}.png`}
+          img={`https://openweathermap.org/img/w/${el.weather[0].icon}.png`}
           temp={el.main.temp}
           desc={el.weather[0].description}
           key={el.dt}
